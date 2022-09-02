@@ -8,7 +8,7 @@
         - Image sizing and formatting
         - Links -->
 # California EV Dreams
-A collaborative project to determine what factors drive adoption of electric vehicles in California.
+A collaborative project with [Adriana Hernandez](https://github.com/adie1717) and [Juan Flores](https://github.com/juanjflores94) to determine what factors drive adoption of electric vehicles in California.
 
 ## Table of contents
 * [Overview of Project](#overview-of-project)
@@ -56,19 +56,6 @@ All datasets are for the state of California, we focused our efforts on the year
   - Removed duplicate fuel type column
 - Population estimates by county from [2010](https://dof.ca.gov/forecasting/demographics/estimates/estimates-e6-2010-2021/) to [2022](https://dof.ca.gov/forecasting/demographics/estimates/e-5-population-and-housing-estimates-for-cities-counties-and-the-state-2020-2022/) was found on dof.ca.gov
   - Added percentage of state population
-
-## Database
-<!-- This comment is hidden from public: Add ERD/excel database model and any bullet points  -->
-We used an AWS Relational Database and SQL, this allowed any team member to link to and update the collective database.
-- 4 tables from cleaned datasets (sales, incentives, population, demographics)
-- 3 tables created from merges or joins (county_year_merged, merged_demo, sales_pop)
-  - county_year_merged includes sales, population, and incentives data for county and year from 2015-2022
-      - Incentive counts for county and state calculated using a for loop
-      - Incentive max amounts calculated using a for loop, .max(), and .sum() functions
-      - County and state totals summed and added to new columns
-  - merged_demo is similar to above, but only covers 2015-2017, and includes average (statewide) demographics for each year
-  - sales_pop is joined on county and year for sales and population
-- 2 tables created with pandas to calculate and add in percentages (county_year_sales, avg_demo)
 
 ## Machine Learning Models
 After initial evaluation, we identified that the incentives, population, and sales data would provide the best model for our hypothesis. Demographics data served as a support. Our dependent variable was sales, and independent variables were incentive counts, incentive max amounts, demographics, population, and county.
@@ -120,7 +107,7 @@ The county_year_merged data without counties performed the worst for both models
 
 <div class='tableauPlaceholder' id='viz1662055482633' style='position: relative'><noscript><a href='https://public.tableau.com/views/CaliforniaEVDreams/CAEVDreams?:language=en-US&:display_count=n&:origin=viz_share_link'><img alt='CA EV Dreams ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ca&#47;CaliforniaEVDreams&#47;CAEVDreams&#47;1_rss.png' style='border: none' width="650" /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='CaliforniaEVDreams&#47;CAEVDreams' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ca&#47;CaliforniaEVDreams&#47;CAEVDreams&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>
 
-Link to website, which includes Tableau dashboards and presentation slide deck: [EV California Dreams](https://juanjflores94.github.io/EV_Project.github.io/)
+<!-- Reconfigure website to host here: Link to website, which includes Tableau dashboards and presentation slide deck: [EV California Dreams](https://juanjflores94.github.io/EV_Project.github.io/) -->
 
 ## Summary
 <!-- Answer our questions, did this turn out as expected? If not, what surprised us? Quick notes for manufacturers:
