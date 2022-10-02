@@ -33,6 +33,21 @@ body {
 	line-height: 1;
 }
 
+/* Container holding the image and the text */
+.container {
+	position: relative;
+	text-align: center;
+	color: white;
+}
+  
+/* Centered text */
+.centered {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
 ol, ul {
 	list-style: none;
 }
@@ -2161,6 +2176,8 @@ input, select, textarea {
 			height: 3.5rem;
 			line-height: 3.5rem;
 			padding: 0 2.75rem;
+			background-color: white;
+			opacity: 0.75;
 		}
 
 		@media screen and (max-width: 980px) {

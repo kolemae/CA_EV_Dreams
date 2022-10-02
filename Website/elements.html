@@ -45,36 +45,23 @@
 									<h1>Machine Learning Model
 									</h1>
 									
-									<div class="image main"><img src="images/ml1.png"  alt="" /></div>
-									<div class="image main"><img src="images/ml2.png"  alt="" /></div>
-					
+													
 					<ul> 
-									<li> <p>In evaluating our data, we considered all points that ultimately would support our topic; </li> </p>
-									<ul style="list-style-type:circle"> 
-									<li> <p>Do the number of incentives offered in counties of California contribute to EV sales? </li> </p> </ul>
-									<li><p>After initial evaluation we identified that the incentives and sales data would ultimately provide the best model for our hypothesis. </li> </p>
-									<li><p>	The demographics data would serve best as supporting data.</li>	</p>			
-									
-									<li><p>In evaluating our data, we considered all points that ultimately would support our topic; Do the number of incentives offered in counties of California contribute to EV sales? After initial evaluation we identified that the incentives and sales data would ultimately provide the best model for our hypothesis. The demographics data would serve best as supporting data. </li> </p>
+									<p>We split our train and test data on number of sales and removed sales percentage.
+										Originally, we planned to use a multiple linear regression, but chose a Random Forest Regressor for better fit and prediction.
+										The model was run 4 times: merged_demo with and without counties, county_year_merged with and without counties.</p>
 
-									<li> <p>Cleaning the data </li> </p>
-									<ul style="list-style-type:circle"> 
-									<li><p>The initial reshaping of the data took place in Jupyter notebook. We read in each of the data sets, identified that there were several nulls that needed to be removed. In addition, we took a fraction of the data given that would demographics data set was large. </li> </p></ul>
-								
-									
-								<li><p>	AWS Relational Database and PG Admin </li> </p>
-								<ul style="list-style-type:circle"> 		
-								<li><p>After completion of the initial evaluation, cleaning and reshaping of the data, we created a relation database in AWS and connected it to our PG Admin account. This allowed us to join our datasets and start correlating our metadata. </li></p></ul>
-										<li><p> Our Dependent variables were: Ownership/Sales </li> </p>
-										<li><p> Our Independent variables were: Income, Inventives, Length of Commute, etc. </li> </p>
-										<ul style="list-style-type:circle"> 			
-										<li><p> The final 3 highest correlated facors were determined by multiple linear regression analysis </li> </p> </ul>
-							
-							
-						<li><p>Due to COVID-19 creating large variance, we will not include 2020-2021 in our analysis </li> </p>
+										<div class="image main"><img src="images\rfreg_top3_mdemo_c.png" alt="" title="merged_demo with counties"/></div>
+										<div class="image main"><img src="images\rfreg_top3_mdemo_nc.png" alt="" title="merged_demo without counties"/></div>
+										<div class="image main"><img src="images\rfreg_top3_cym.png" alt="" title="county_year_merged with counties"/></div>
+										<div class="image main"><img src="images\rfreg_top3_cym_nc.png" alt="" title="county_year_merged without counties"/></div>
 
-									
-			
+									<p>The above images show the top 3 features for each model run.
+										Red indicates real values, and green are predicted values.
+										At a glance we can see the model fits well.
+										We also tried out a stacking regressor, leading us to try Gradient Boosting Regression for better accuracy.
+										<b>Both the Random Forest Regressor and Gradient Boosting Regressor did well at predicting EV sales, with R² values above 0.75 and accuracy scores above 75% (respectively) for all models run.</b></p>
+
 								</section>		
 
 
